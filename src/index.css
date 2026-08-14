@@ -63,7 +63,7 @@ main > section.home-section{
   margin: auto;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-    url('/src/assets/hill.jpg');
+    url('/src/assets/van.jpg');
   background-size: cover;
   background-position: center;
   color: white;

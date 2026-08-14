@@ -1,0 +1,152 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #FDF6E3;
+  font-family: "Inter", sans-serif;
+  
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Header-section */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 15vh;
+  width: 95%;
+  margin: auto;
+}
+
+header > a.home{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header > nav{
+  display: flex;
+  gap: 18px;
+}
+
+
+/* main section */
+main{
+  min-height: 100vh;
+}
+
+
+/* Home-section */
+main > section.home-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  height: 100vh;
+  margin: auto;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('/src/assets/hill.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+  padding-inline: 15px;
+}
+
+main > section.home-section > h1{
+  font-size: 2.8rem;
+}
+
+main > section.home-section > p{
+  letter-spacing: 0.02em;
+  margin-bottom: 80px;
+}
+
+main > section.home-section > a{
+  background-color: orange;
+  text-align: center;
+  width: 60%;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+
+/* About-section */
+main > section.about-section > div.img-container{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+main > section.about-section > div.img-container > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+main > section.about-section > div.about-text{
+  padding-inline: 25px;
+  margin-bottom: 20px;
+}
+
+main > section.about-section > div.about-text > h2{
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+}
+
+main > section.about-section > div.about-text > p{
+  margin-bottom: 10px;
+}
+
+.about-pitch{
+  padding: 20px;
+  background-color: #D2A679;
+  width: 94%;
+  margin: auto;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.about-pitch > h2{
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.about-pitch > a{
+  background-color: black;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+/* footer section */
+footer{
+  background-color: #333333;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
+import van from '../assets/van.png';
 
 export default function About() {
   return(
     <section className="about-section">
         <div className="img-container">
-            <img alt="van-img" src="../assets/van.png"/>
+            <img alt="van-img" src={van}/>
         </div>
 
         <div className="about-text">

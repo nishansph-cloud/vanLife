@@ -4,7 +4,7 @@ export default function About() {
   return(
     <section className="about-section">
         <div className="img-container">
-            <img alt="van-img" src="/src/assets/van.jpg"/>
+            <img alt="van-img" src="../assets/van.jpg"/>
         </div>
 
         <div className="about-text">

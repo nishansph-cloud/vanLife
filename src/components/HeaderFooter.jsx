@@ -8,16 +8,18 @@ export default function Header() {
                 <Link className="home" to="/">#Vanlife</Link>
                 <nav>
                     <Link to="/about">About</Link>
-                    <Link>Van</Link>
+                    <Link to="/vans">Vans</Link>
                 </nav>
             </header>
 
             <main>
-                <Outlet />
+                <Outlet /> 
+                {/* this is where routes will render */}
             </main>
 
             <footer>
-                &copy;2026 #VANLIFE
+                &copy;2026 
+                <Link to="/">#VANLIFE</Link>
             </footer>
         </>
     )

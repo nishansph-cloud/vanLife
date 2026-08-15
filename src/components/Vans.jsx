@@ -4,9 +4,9 @@ import {makeServer} from '../data/server';
 
 
 
-if (import.meta.env.DEV) {
-  makeServer()
-}
+
+makeServer()
+
 
 export default function Vans() {
 

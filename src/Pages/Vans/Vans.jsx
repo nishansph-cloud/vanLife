@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {makeServer} from '../data/server';
-
-
+import {makeServer} from '../../data/server';
 
 
 makeServer()
-
 
 export default function Vans() {
 

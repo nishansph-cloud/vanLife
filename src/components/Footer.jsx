@@ -1,12 +1,13 @@
-import { Outlet } from "react-router-dom"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
 
   return (
-    <>
-        <div>Footer</div>
-        <Outlet />
-    </>
+    <footer>
+        &copy;2026 
+        <Link to="/">#VANLIFE</Link>
+    </footer>
   )
 }
 

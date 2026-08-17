@@ -518,14 +518,15 @@ section.host-van-detail-section {
 
 section.host-van-detail-section > a {
   margin-bottom: 25px;
+  width: 150px;
   display: block;
-  text-decoration: underline;
   transition: font-weight 125ms ease, color 125ms ease;
 }
 
 section.host-van-detail-section > a:hover {
   font-weight: bold;
   color: #161616;
+  text-decoration: underline;
 }
 
 .vost-van-detail-container {

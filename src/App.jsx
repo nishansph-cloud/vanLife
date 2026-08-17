@@ -10,6 +10,9 @@ import Dashboard from './Pages/Host/Dashboard';
 import Income from './Pages/Host/Income';
 import Hostvans from './Pages/Host/HostVans';
 import HostVanDetail from './Pages/Host/HostVanDetail';
+import Detail from './Pages/Host/HostDetail/Detail';
+import Photos from './Pages/Host/HostDetail/Photos';
+import Pricing from './Pages/Host/HostDetail/Pricing';
 import Reviews from './Pages/Host/Reviews';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { makeServer } from './data/server';
@@ -52,7 +55,13 @@ export function App() {
           {/* index, means render the elemnt at parent path */}
           <Route path='income' element={<Income />} />
           <Route path='host-vans' element={<Hostvans />} />
-          <Route path='host-vans/:id' element={<HostVanDetail />} />
+          
+          <Route path='host-vans/:id' element={<HostVanDetail />}>
+            <Route index element={<Detail />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="photos" element={<Photos />} />
+          </Route>
+          
           <Route path='reviews' element={<Reviews />} />
         </Route>
 

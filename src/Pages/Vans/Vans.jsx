@@ -35,7 +35,7 @@ export default function Vans() {
             <section className='van-list-section'>
                 
                 {vans.map(van => (
-                    <Link key={van.id} to={`/vans/${van.id}`} >
+                    <Link key={van.id} to={`${van.id}`} >
                         <div  className='van-list-container'>
                 
                             <div className='van-image-container'>

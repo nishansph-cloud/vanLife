@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, NavLink, useParams, Outlet } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 function HostVanDetail() {
@@ -8,6 +8,12 @@ function HostVanDetail() {
 
   const params = useParams()
 
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616"
+  }
+
   useEffect( () => {
       async function fetchVan(){
           const response = await fetch(`/api/vans/${params.id}`)
@@ -15,7 +21,7 @@ function HostVanDetail() {
           setVan(data.van)
       }
       fetchVan()
-  },[params.id]) 
+  },[params.id])  
 
   if (!van) return <h2>Loading...</h2>
 
@@ -23,7 +29,7 @@ function HostVanDetail() {
     <>
       <section className='host-van-detail-section'>
 
-        <Link to="../host-vans">Back to all Vans</Link>
+        <Link to=".." relative='path'> ← Back to all Vans</Link>
     
         <div className='vost-van-detail-container'>
           
@@ -40,16 +46,24 @@ function HostVanDetail() {
         </div>
 
         <nav>
-          <Link>Detail</Link>
-          <Link>Pricing</Link>
-          <Link>Photos</Link>
+          <NavLink
+            style={({isActive}) => isActive ? activeStyle : null} 
+            end
+            to="."
+          >Detail</NavLink>
+
+          <NavLink
+            style={({isActive}) => isActive ? activeStyle : null} 
+            to="pricing"
+          >Pricing</NavLink>
+
+          <NavLink
+            style={({isActive}) => isActive ? activeStyle : null} 
+            to="photos"
+          >Photos</NavLink>
         </nav>
 
-        <h1 className='detail-name'><span>Name:</span>{van.name}</h1>
-
-        <h1><span>category:</span>{van.type}</h1>
-
-        <p><span>Description:</span>{van.description}</p>
+        <Outlet context={[van, setVan]}/> 
           
       </section>
     </>

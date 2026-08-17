@@ -18,8 +18,7 @@ export default function About() {
 
         <div className="about-pitch">
             <h2>Your destination is waiting.<br />Your van is ready.</h2>
-            <Link>Expolore our van</Link>
-
+            <Link to="../vans" relative="path">Expolore our van</Link>
         </div>
     </section>
   )

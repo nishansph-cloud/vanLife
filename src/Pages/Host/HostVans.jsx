@@ -21,7 +21,7 @@ function HostVans() {
         <h1>Your listed Vans</h1>
         
         {vans.map(van => 
-          <Link key={van.id} to={`${van.id}`}>
+          <Link key={van.id} to={van.id}>
             
             <div className='host-van-container'>
               

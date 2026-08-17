@@ -34,6 +34,7 @@ import { useState, useEffect } from 'react';
 //   )
 // }
 
+makeServer()
 
 export function App() { 
   

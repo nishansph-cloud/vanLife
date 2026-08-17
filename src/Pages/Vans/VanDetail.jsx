@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 function VanDetail() {
@@ -20,6 +20,8 @@ function VanDetail() {
 
   return (
     <section className='van-detail-section'>
+
+        <Link to=".." relative='path'> ← Back to all Vans</Link>
 
         <div className='van-detail__img-container'>
             <img  alt='van-img' src={van.imageUrl}/>

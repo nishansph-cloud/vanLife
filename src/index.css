@@ -184,13 +184,23 @@ section.van-header > div.vans-tag {
   gap: 5px;
 }
 
-section.van-header > div.vans-tag > span {
+section.van-header > div.vans-tag > a {
   background-color: #D2A679;
   padding: 5px 15px;
   border-radius: 10px;
   font-size: 0.9rem;
   letter-spacing: 0.015em;
   text-transform: capitalize;
+}
+
+section.van-header > div.vans-tag > a:hover {
+  background-color: #A67C4E;
+  color: #ffff;
+}
+
+section.van-header > div.vans-tag > a.selected {
+  background-color: #A67C4E;
+  color: #ffff;
 }
 
 
@@ -253,6 +263,20 @@ section.van-detail-section{
   min-height: 100vh;
   padding-inline: 40px;
   margin-bottom: 40px;
+}
+
+section.van-detail-section > a {
+  margin-bottom: 25px;
+  width: 150px;
+  display: block;
+  transition: font-weight 125ms ease, color 125ms ease;
+  align-self: flex-start;
+}
+
+section.van-detail-section > a:hover {
+  font-weight: bold;
+  color: #161616;
+  text-decoration: underline;
 }
 
 div.van-detail__img-container{

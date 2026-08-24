@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 
 function Photos() {
 
-    const [van, setVan] = useOutletContext()
+    const van = useOutletContext()
 
   return (
     <img height={200} alt='van-image' src={van.imageUrl}/>

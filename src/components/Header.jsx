@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import avatarIcon from '../assets/avatar-icon.png';
 
 function Header() {
 
@@ -30,6 +31,15 @@ function Header() {
             >
                 Vans
             </NavLink>
+
+            <Link to="/login" className="login-link">
+                <img 
+                    src={avatarIcon} 
+                    className="login-icon"
+                />
+            </Link>
+
+            <button onClick={() => localStorage.removeItem("loggedin")}>X</button>
         </nav>
     
     </header>

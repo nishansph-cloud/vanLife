@@ -1,12 +1,30 @@
-import React from 'react'
-import { Link, NavLink, useParams, Outlet } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { Suspense } from 'react'
+import { Link, NavLink, useParams, Outlet, useLoaderData, Await } from 'react-router-dom'
+// import { getHostVans } from '../../api'
+import { getVan } from '../../api'
+import { requiredAuth } from '../../utils'
+
+export async function loader({ params, request }) {
+  await requiredAuth(request)
+  return {van: getVan(params.id)}
+}
 
 function HostVanDetail() {
 
-  const [van, setVan] = useState(null)
+  // const [van, setVan] = useState(null)
 
-  const params = useParams()
+  // const params = useParams()
+  
+  // useEffect( () => {
+  //     async function fetchVan(){
+  //         const response = await fetch(`/api/vans/${params.id}`)
+  //         const data = await response.json() 
+  //         setVan(data.van)
+  //     }
+  //     fetchVan()
+  // },[params.id])
+
+  const vanPromise = useLoaderData()
 
   const activeStyle = {
     fontWeight: "bold",
@@ -14,19 +32,8 @@ function HostVanDetail() {
     color: "#161616"
   }
 
-  useEffect( () => {
-      async function fetchVan(){
-          const response = await fetch(`/api/vans/${params.id}`)
-          const data = await response.json()
-          setVan(data.van)
-      }
-      fetchVan()
-  },[params.id])  
-
-  if (!van) return <h2>Loading...</h2>
-
-  return (
-    <>
+  function renderHostVanDetail(van) {
+    return(
       <section className='host-van-detail-section'>
 
         <Link to=".." relative='path'> ← Back to all Vans</Link>
@@ -63,10 +70,18 @@ function HostVanDetail() {
           >Photos</NavLink>
         </nav>
 
-        <Outlet context={[van, setVan]}/> 
+        <Outlet context={van}/> 
           
       </section>
-    </>
+    )
+  }
+
+  return (
+    <Suspense fallback={<h2>Loading host-van detail...</h2>}>
+      <Await resolve={vanPromise.van}>
+        {renderHostVanDetail}
+      </Await>
+    </Suspense>
   )
 }
 

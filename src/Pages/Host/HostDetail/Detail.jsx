@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom'
 
 function Detail() {
 
-    const [van, setVan] = useOutletContext()
+    const van = useOutletContext()
 
   return (
     <>

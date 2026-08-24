@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 
 function Pricing() {
 
-    const [Van, setVan] = useOutletContext()
+    const Van = useOutletContext()
 
   return (
     <p><span>Pricing:</span>${Van.price}/day</p>

@@ -67,6 +67,15 @@ header > nav > a:hover{
   text-decoration: underline;
 }
 
+header .login-icon {
+    height: 18px;
+    width: 18px;
+}
+
+header .login-link {
+    display: inline-flex;
+    align-items: center;
+}
 
 /* main section */
 main{
@@ -267,7 +276,8 @@ section.van-detail-section{
 
 section.van-detail-section > a {
   margin-bottom: 25px;
-  width: 150px;
+  min-width: 120px;
+  max-width: 160;
   display: block;
   transition: font-weight 125ms ease, color 125ms ease;
   align-self: flex-start;
@@ -668,4 +678,96 @@ footer > a{
 
 footer > a:hover{
   color: yellow;
+}
+
+/* Not Found (404) Section */
+section.not-found-section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+section.not-found-section > div > h1{
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+section.not-found-section > div > a{
+  display: block;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 90%;
+  justify-self: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* Login section */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 27px;
+  margin-top: 80px;
+}
+
+.login-container > h1.red {
+  color: #B22222;
+  font-size: 1.4rem;
+}
+
+.login-container > h1 {
+  margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;    
+}
+
+.login-form > input {
+    border: 1px solid rgba(209, 213, 219);
+    height: 40px;
+    text-indent: 10px;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    font-weight: 400;
+}
+
+.login-form > input:focus {
+    outline: none;
+}
+
+.login-form > input:first-of-type {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+    border-radius: 0px 0px 6px 6px;
+    border-top: none;
+}
+
+.login-form > button {
+    background-color: #FF8C38;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    margin-top: 22px;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.login-form > button:hover{
+  background-color: #e96c13;
+}
+
+.login-form > button:disabled{
+  background-color: #aaaaaa;
+  cursor: not-allowed;
 }
